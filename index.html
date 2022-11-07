@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h2>SRIJAN</h2>
+            <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(255,255,255,1)"/></svg>
+            <svg onclick="doMenu()" class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="rgba(255,255,255,1)"/></svg>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Gallery</li>
+                <li>Feedback</li>
+            </ul>
+           </div>
+        </nav>
+        <!-- <div class="text blink">
+            <h1>SRIJAN</h1>
+        </div> -->
+
+            <ul class="list">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Gallery</li>
+                <li>Feedback</li>
+            </ul>
+    <script>
+        function showMenu(){
+            document.querySelector('.list').classList.add('slide');
+            document.querySelector('.list').classList.remove('back');
+            document.querySelector('nav svg:nth-child(2)').classList.add('hidden');
+            document.querySelector('nav svg:nth-child(3)').classList.remove('hidden');
+            const nodeList = document.querySelectorAll('.list li');
+            for(let i =0; i<nodeList.length; i++) {
+                nodeList[i].classList.add('delayedSlide')
+                nodeList[i].classList.remove('backDelay')
+            
+            console.log('showmenu')
+        }
+        function doMenu() {
+            console.log('domenu')
+            document.querySelector('.list').classList.add('back');
+            document.querySelector('.list').classList.remove('slide');
+            document.querySelector('nav svg:nth-child(3)').classList.add('hidden');
+            document.querySelector('nav svg:nth-child(2)').classList.remove('hidden');
+            const nodeList = document.querySelectorAll('.list li');
+            for(let i =0; i<nodeList.length; i++) {
+                nodeList[i].classList.add('backDelay')
+                nodeList[i].classList.remove('delayedSlide')
+            }
+        }
+    </script>
+</body>
+</html>
